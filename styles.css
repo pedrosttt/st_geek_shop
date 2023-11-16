@@ -1,0 +1,197 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 50px;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #FFADAD;
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
+}
+
+header {
+    background-color: #FFADAD;
+    color: #FDFFB6;
+    text-align: center;
+    padding: 1em 0;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+header::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 4px;
+    background-color: #FDFFB6;
+    border-radius: 10px; /* Borda arredondada para um estilo mais suave */
+}
+
+header img {
+    max-width: 100%;
+    height: auto;
+    width: 650px; /* ou o valor desejado em pixels */
+}
+
+
+.section-title {
+    text-align: center;
+    width: 100%;
+    clear: both;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-size: 40px;
+    font-family: 'Poppins', cursive; /* Fonte cartunesca */
+    font-weight: bold;
+    color: #CAFFBF; /* Cor rosa vibrante, você pode ajustar conforme necessário */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Adiciona uma sombra de texto suave */
+}
+
+/* Estilo para todos os produtos */
+.product {
+    box-sizing: border-box;
+    flex: 0 0 calc(25% - 30px);
+    padding: 15px;
+    margin: 15px;
+    text-align: center;
+    max-width: 280px;
+    border-radius: 10px; /* Borda arredondada */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    background-color: #FFFFFF; /* Cor de fundo branca */
+}
+
+.product img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Estilo específico para produtos POP! */
+.pop-products .product {
+    background-color: #FDFFB6;
+    color: #000000;
+}
+
+/* Estilo específico para produtos Banpresto */
+.banpresto-products .product {
+    background-color: #FDFFB6;
+    color: #000000;
+}
+
+
+/* Adapte o estilo conforme necessário para as seções POP! e Banpresto */
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px; /* Adiciona um espaçamento interno à seção de produtos */
+    background-color: #FFADAD; /* Cor de fundo da seção de produtos */
+    border-radius: 20px; /* Borda arredondada para a seção de produtos */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave para a seção de produtos */
+    margin-bottom: 30px; /* Adiciona uma margem inferior para separar as seções */
+}
+
+.pop-products {
+    margin-bottom: 100px; /* Adiciona uma margem inferior específica para a seção POP! */
+}
+
+.banpresto-products {
+    margin-bottom: 15px; /* Adiciona uma margem inferior específica para a seção Banpresto */
+}
+
+.availability {
+    font-size: 14px;
+    margin-top: 8px;
+    color: #4CAF50; /* Cor verde para indicar disponibilidade */
+}
+
+/* Estilos para tablets */
+@media screen and (min-width: 641px) and (max-width: 1023px) {
+    .product {
+        flex: 0 0 calc(32% - 30px);
+    }
+}
+
+/* Estilos para dispositivos móveis */
+@media screen and (max-width: 640px) {
+    .products {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px; /* Espaçamento entre os produtos */
+        padding: 3px; /* Adiciona um espaçamento interno à seção de produtos para dispositivos móveis */
+        margin-bottom: 20px; /* Adiciona uma margem inferior para separar as seções */
+    }
+
+    .section-title {
+        grid-column: span 2; /* Faz com que a section-title ocupe as duas colunas disponíveis */
+        text-align: center;
+        font-size: 24px; /* Reduz o tamanho da fonte para dispositivos móveis */
+        margin-top: 20px; /* Adiciona um espaçamento superior para separar as section titles */
+    }
+
+    .product {
+        margin: 3px; /* Ajusta as margens ao redor dos produtos para garantir o mesmo tamanho */
+        box-shadow: none; /* Remove a sombra nos produtos para dispositivos móveis */
+        max-width: 100%; /* Garante que os produtos ocupem 100% da largura disponível */
+    }
+
+    .pop-products .product {
+        max-width: 150px; /* Garante que os produtos tenham o mesmo tamanho */
+    }
+
+    .pop-products img {
+        max-width: 120px;
+        margin: -12px;
+    }
+
+    .banpresto-products .product {
+        max-width: 150px;
+        width: 100%;
+    }
+
+    .banpresto-products img {
+        max-width: 150px;
+        margin: -13px;
+    }
+
+    h3 {
+        font-size: 16px;
+    }
+
+    span {
+        font-size: 14px;
+    }
+
+    .products, .pop-products, .banpresto-products {
+        border-radius: 0; /* Remove a borda arredondada em dispositivos móveis */
+        box-shadow: none; /* Remove a sombra da caixa em dispositivos móveis */
+    }
+
+    .pop-products,
+    .banpresto-products {
+        margin-bottom: 20px; /* Adiciona uma margem inferior específica para cada seção em dispositivos móveis */
+    }
+
+    .availability {
+        font-size: 12px; /* Reduz o tamanho da fonte para a disponibilidade */
+        margin-top: 5px; /* Adiciona um espaçamento superior para a disponibilidade */
+    }
+}
+
+/* ... Outros estilos permanecem inalterados */
+
+.footer-container {
+    margin-top: 50px; /* Ajuste conforme necessário para separar o conteúdo do footer */
+}
+
+footer {
+    background: none;
+    color: #FDFFB6;
+    text-align: center;
+    padding: 0;
+    width: 100%;
+}
+
