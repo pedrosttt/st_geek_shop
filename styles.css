@@ -36,6 +36,13 @@ header img {
     width: 650px; /* ou o valor desejado em pixels */
 }
 
+.desconto {
+    font-family: 'Poppins', cursive;
+    font-size: 18px;
+    color: #FDFFB6;
+    margin-bottom: -110px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
 
 .section-title {
     text-align: center;
@@ -95,7 +102,7 @@ header img {
 }
 
 .pop-products {
-    margin-bottom: 100px; /* Adiciona uma margem inferior específica para a seção POP! */
+    margin-bottom: 10px; /* Adiciona uma margem inferior específica para a seção POP! */
 }
 
 .banpresto-products {
@@ -106,6 +113,12 @@ header img {
     font-size: 14px;
     margin-top: 8px;
     color: #4CAF50; /* Cor verde para indicar disponibilidade */
+}
+
+.availability-no {
+    font-size: 14px;
+    margin-top: 8px;
+    color: rgb(175, 76, 76); /* Cor vermelho para indicar indisponibilidade */
 }
 
 /* Estilos para tablets */
@@ -125,11 +138,19 @@ header img {
         margin-bottom: 20px; /* Adiciona uma margem inferior para separar as seções */
     }
 
+    .desconto {
+        grid-column: span 2;
+        text-align: center;
+        font-size: 12px;
+        margin-top: -40px;
+    }
+
     .section-title {
         grid-column: span 2; /* Faz com que a section-title ocupe as duas colunas disponíveis */
         text-align: center;
         font-size: 24px; /* Reduz o tamanho da fonte para dispositivos móveis */
         margin-top: 20px; /* Adiciona um espaçamento superior para separar as section titles */
+        margin-bottom: -50px;
     }
 
     .product {
@@ -173,6 +194,10 @@ header img {
     .pop-products,
     .banpresto-products {
         margin-bottom: 20px; /* Adiciona uma margem inferior específica para cada seção em dispositivos móveis */
+    }
+
+    .pop-products {
+        margin-bottom: -70px;
     }
 
     .availability {
