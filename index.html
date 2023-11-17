@@ -7,7 +7,56 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    
     <title>St Geek Shop</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Função para adicionar zoom sutil no hover
+            function addZoomEffect(element) {
+                element.addEventListener("mouseover", function () {
+                    element.style.transform = "scale(1.05)";
+                });
+
+                element.addEventListener("mouseout", function () {
+                    element.style.transform = "scale(1)";
+                });
+            }
+
+            // Função para adicionar fade in ao rolar
+            function addFadeInEffect(elements) {
+                function fadeIn() {
+                    elements.forEach(function (element) {
+                        if (isElementInViewport(element)) {
+                            element.classList.add("fade-in");
+                        }
+                    });
+                }
+
+                function isElementInViewport(element) {
+                    var rect = element.getBoundingClientRect();
+                    return (
+                        rect.top >= 0 &&
+                        rect.left >= 0 &&
+                        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                    );
+                }
+
+                document.addEventListener("scroll", fadeIn);
+                fadeIn(); // Chamar a função inicialmente para verificar produtos visíveis na carga da página
+            }
+
+            // Aplicar zoom sutil a todos os produtos
+            var products = document.querySelectorAll(".product");
+            products.forEach(function (product) {
+                addZoomEffect(product);
+            });
+
+            // Aplicar fade in a todos os produtos
+            var allProducts = document.querySelectorAll(".product");
+            addFadeInEffect(allProducts);
+        });
+    </script>
 </head>
 <body>
 
@@ -508,6 +557,13 @@
 
     </section>
         
+    <section class="contato">
+        <p>stgeekshop@gmail.com</p>
+        
+        <a href="https://www.instagram.com/stgeekshop/">
+            <img src="instagram.png" alt="Logo Instagram">
+        </a>
+    </section>
 
     <div class="footer-container">
 
